@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diem | Build-in-Public Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    :root {
+      --bg-main: #0B0C0E;
+      --bg-card: #13151B;
+      --bg-card-hover: #1A1D26;
+      --accent-blue: #4F75FF;
+      --accent-blue-hover: #3B5DDF;
+      --accent-green: #10B981;
+      --text-silver: #E2E8F0;
+      --text-muted: #94A3B8;
+      --border-color: rgba(226, 232, 240, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-silver);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 40px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo span {
+      color: var(--accent-blue);
+    }
+
+    .vip-pill {
+      background: rgba(79, 117, 255, 0.15);
+      color: var(--accent-blue);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(79, 117, 255, 0.3);
+    }
+
+    /* VIP LANDING SECTION */
+    .vip-hero {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin: 30px 0 50px;
+      text-align: center;
+    }
+
+    .vip-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .vip-hero p {
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto 25px;
+      font-size: 1.05rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-form button {
+      background: var(--accent-blue);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--accent-blue-hover);
+    }
+
+    /* BLOG POST CARD */
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .post-tag {
+      color: var(--accent-green);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .post-date {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* MEDIA TOGGLE DISPLAY */
+    .media-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      background: #000;
+      border: 1px solid var(--border-color);
+    }
+
+    .media-img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .media-controls {
+      display: flex;
+      gap: 10px;
+      padding: 15px;
+      background: rgba(11, 12, 14, 0.9);
+      justify-content: center;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .toggle-btn.active {
+      background: var(--accent-blue);
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+
+    .post-content p {
+      margin-bottom: 15px;
+      color: var(--text-silver);
+      font-size: 1.05rem;
+    }
+
+    /* RESOURCES & TOOLS */
+    .resources-box {
+      margin-top: 25px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .resources-box h4 {
+      color: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .resources-box ul {
+      list-style: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .resources-box li {
+      margin-bottom: 6px;
+    }
+
+    .resources-box a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="brand-logo"><span>◆</span> Diem</div>
+      <a href="https://joindiem.kit.com/vip" class="vip-pill" target="_blank">Join VIP Waitlist</a>
+    </header>
+
+    <!-- VIP SIGNUP HERO -->
+    <section class="vip-hero">
+      <h1>Stop Losing Time</h1>
+      <p>Turning time-blindness into a gamified scrapbook of ✨ wins ✨, without the guilt. Seize your hours and join the VIP app beta test waitlist.</p>
+      <form class="newsletter-form" action="https://joindiem.kit.com/vip" method="GET" target="_blank">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Join VIP</button>
+      </form>
+    </section>
+
+    <!-- BLOG POST SECTION -->
+    <main>
+      <article class="post-card">
+        <div class="post-header">
+          <span class="post-tag">Build Log #01</span>
+          <time class="post-date">OCTOBER 30, 2026</time>
+        </div>
+
+        <h2 class="post-title">Day 1 > Build Diem Together</h2>
+
+        <!-- IMAGE TOGGLE SECTION -->
+        <div class="media-container" id="day1-media">
+          <img id="day1-img" src="https://lh3.googleusercontent.com/d/1h9LCkTPOC6-PWe7X63QViNsR9tln_RSj" alt="Official Concept" class="media-img">
+          <div class="media-controls">
+            <button class="toggle-btn active" onclick="switchMedia('day1', 'https://lh3.googleusercontent.com/d/1h9LCkTPOC6-PWe7X63QViNsR9tln_RSj', this)">
+              <i class="ph ph-sparkle"></i> Official Concept
+            </button>
+            <button class="toggle-btn" onclick="switchMedia('day1', 'https://lh3.googleusercontent.com/d/18Dhf3VzOnkHEeiMllGjnqn-R_Cd3jWs9', this)">
+              <i class="ph ph-pencil-line"></i> Raw Draft Sketch
+            </button>
+          </div>
+        </div>
+
+        <!-- JOURNAL CONTENT -->
+        <div class="post-content">
+          <p>Tired of planners that make you feel guilty for running behind schedule? Same. Traditional calendars are way too rigid—so let’s build a shame-free productivity tool together. Good vibes only.</p>
+          <p>I sketched out the initial idea today, and honestly? It’s already coming together so well. But I felt like it was still missing that extra spark...</p>
+          <p><strong>WHAT IF 💡 we highlight the biggest win of the day?</strong> Aww yeah. Turning hours spent into collected wins.</p>
+          <p>Follow along on this journey and help me build Diem from scratch! 🫰</p>
+        </div>
+
+        <!-- RESOURCES SECTION -->
+        <div class="resources-box">
+          <h4><i class="ph ph-wrench"></i> Resources & Links</h4>
+          <ul>
+            <li><strong>Digital Sketches:</strong> Procreate & Figma</li>
+            <li><strong>VIP Community Waitlist:</strong> <a href="https://joindiem.kit.com/vip" target="_blank">joindiem.kit.com/vip</a></li>
+          </ul>
+        </div>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Diem. Built in public with zero guilt.</p>
+    </footer>
+  </div>
+
+  <script>
+    function switchMedia(postId, newSrc, btn) {
+      const imgTag = document.getElementById(postId + '-img');
+      imgTag.src = newSrc;
+      
+      const buttons = btn.parentElement.querySelectorAll('.toggle-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
