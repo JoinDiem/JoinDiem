@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diem | Build-in-Public Journal</title>
+  <title>Diem | Stop Losing Time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -56,6 +56,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      text-decoration: none;
     }
 
     .brand-logo span {
@@ -71,66 +72,173 @@
       font-weight: 600;
       text-decoration: none;
       border: 1px solid rgba(79, 117, 255, 0.3);
+      transition: all 0.2s ease;
     }
 
-    /* VIP LANDING SECTION */
+    .vip-pill:hover {
+      background: rgba(79, 117, 255, 0.25);
+    }
+
+    /* VIP HERO SECTION */
     .vip-hero {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 40px 30px;
-      margin: 30px 0 50px;
+      border-radius: 20px;
+      padding: 50px 30px;
+      margin: 30px 0 40px;
       text-align: center;
+    }
+
+    .teaser-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(79, 117, 255, 0.1);
+      border: 1px solid rgba(79, 117, 255, 0.3);
+      color: var(--accent-blue);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
     .vip-hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #fff;
       margin-bottom: 15px;
+      line-height: 1.2;
     }
 
     .vip-hero p {
       color: var(--text-muted);
-      max-width: 550px;
-      margin: 0 auto 25px;
+      max-width: 580px;
+      margin: 0 auto 30px;
       font-size: 1.05rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .newsletter-form {
       display: flex;
       gap: 10px;
-      max-width: 450px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 420px;
     }
 
     .newsletter-form input {
       flex: 1;
-      padding: 12px 18px;
-      border-radius: 8px;
+      padding: 14px 18px;
+      border-radius: 10px;
       border: 1px solid var(--border-color);
       background: rgba(255, 255, 255, 0.05);
       color: #fff;
       font-size: 0.95rem;
+      outline: none;
     }
 
-    .newsletter-form button {
+    .newsletter-form input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .btn-primary {
       background: var(--accent-blue);
       color: #fff;
       border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 14px 22px;
+      border-radius: 10px;
       font-weight: 600;
       cursor: pointer;
+      white-space: nowrap;
       transition: background 0.2s;
     }
 
-    .newsletter-form button:hover {
+    .btn-primary:hover {
       background: var(--accent-blue-hover);
     }
 
-    /* BLOG POST CARD */
-    .post-card {
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-silver);
+      border: 1px solid var(--border-color);
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-silver);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* FEATURE CARDS GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 16px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(79, 117, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 1.6rem;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* LATEST UPDATE SECTION */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .update-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
@@ -138,14 +246,14 @@
       margin-bottom: 40px;
     }
 
-    .post-header {
+    .update-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
-    .post-tag {
+    .update-tag {
       color: var(--accent-green);
       font-size: 0.85rem;
       font-weight: 700;
@@ -153,101 +261,38 @@
       text-transform: uppercase;
     }
 
-    .post-date {
+    .update-date {
       color: var(--text-muted);
       font-size: 0.85rem;
     }
 
-    .post-title {
+    .update-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .update-snippet {
+      color: var(--text-silver);
+      font-size: 1rem;
       margin-bottom: 20px;
     }
 
-    /* MEDIA TOGGLE DISPLAY */
-    .media-container {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      background: #000;
-      border: 1px solid var(--border-color);
-    }
-
-    .media-img {
-      width: 100%;
-      height: auto;
-      max-height: 450px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .media-controls {
-      display: flex;
-      gap: 10px;
-      padding: 15px;
-      background: rgba(11, 12, 14, 0.9);
-      justify-content: center;
-    }
-
-    .toggle-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-
-    .toggle-btn.active {
-      background: var(--accent-blue);
-      color: #fff;
-      border-color: var(--accent-blue);
-    }
-
-    .post-content p {
-      margin-bottom: 15px;
-      color: var(--text-silver);
-      font-size: 1.05rem;
-    }
-
-    /* RESOURCES & TOOLS */
-    .resources-box {
-      margin-top: 25px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 10px;
-      border-left: 3px solid var(--accent-blue);
-    }
-
-    .resources-box h4 {
-      color: #fff;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .resources-box ul {
-      list-style: none;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .resources-box li {
-      margin-bottom: 6px;
-    }
-
-    .resources-box a {
+    .read-log-btn {
       color: var(--accent-blue);
       text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      transition: gap 0.2s ease;
+    }
+
+    .read-log-btn:hover {
+      gap: 10px;
+      text-decoration: underline;
     }
 
     footer {
@@ -264,59 +309,67 @@
   <div class="container">
     <!-- HEADER -->
     <header>
-      <div class="brand-logo"><span>◆</span> Diem</div>
+      <a href="index.html" class="brand-logo"><span>◆</span> Diem</a>
       <a href="https://joindiem.kit.com/vip" class="vip-pill" target="_blank">Join VIP Waitlist</a>
     </header>
 
-    <!-- VIP SIGNUP HERO -->
-    <section class="vip-hero">
+    <!-- VIP LANDING HERO -->
+    <section class="vip-hero" id="hero">
+      <div class="teaser-pill">
+        <i class="ph ph-sparkle"></i> Invite friends & unlock early VIP beta access
+      </div>
       <h1>Stop Losing Time</h1>
       <p>Turning time-blindness into a gamified scrapbook of ✨ wins ✨, without the guilt. Seize your hours and join the VIP app beta test waitlist.</p>
-      <form class="newsletter-form" action="https://joindiem.kit.com/vip" method="GET" target="_blank">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit">Join VIP</button>
-      </form>
+      
+      <div class="hero-cta">
+        <form class="newsletter-form" action="https://joindiem.kit.com/vip" method="GET" target="_blank">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Join VIP</button>
+        </form>
+        <a href="#latest-update" class="btn-secondary">Read Build Logs <i class="ph ph-arrow-down"></i></a>
+      </div>
     </section>
 
-    <!-- BLOG POST SECTION -->
-    <main>
-      <article class="post-card">
-        <div class="post-header">
-          <span class="post-tag">Build Log #01</span>
-          <time class="post-date">OCTOBER 30, 2026</time>
+    <!-- 3 CORE FEATURE CARDS -->
+    <section class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ph ph-heart-break"></i></div>
+        <h3>Shame-Free Flow</h3>
+        <p>A flexible calendar that adapts smoothly when life happens. Good vibes only—no red alerts, no guilt trips.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ph ph-trophy"></i></div>
+        <h3>Gamified Scrapbook</h3>
+        <p>Turn hours spent into collected wins. Document your momentum, build your streak, and celebrate growth.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ph ph-users-three"></i></div>
+        <h3>Squad & Points</h3>
+        <p>Build alongside friends, earn platform points together, and directly shape future features with us.</p>
+      </div>
+    </section>
+
+    <!-- LATEST UPDATE SECTION -->
+    <main id="latest-update">
+      <div class="section-header">
+        <h2 class="section-title">Latest Build Update</h2>
+      </div>
+
+      <article class="update-card">
+        <div class="update-header">
+          <span class="update-tag">Build Log #01</span>
+          <time class="update-date">OCTOBER 30, 2026</time>
         </div>
 
-        <h2 class="post-title">Day 1 > Build Diem Together</h2>
+        <h3 class="update-title">Day 1 > Build Diem Together</h3>
 
-        <!-- IMAGE TOGGLE SECTION -->
-        <div class="media-container" id="day1-media">
-          <img id="day1-img" src="https://lh3.googleusercontent.com/d/1h9LCkTPOC6-PWe7X63QViNsR9tln_RSj" alt="Official Concept" class="media-img">
-          <div class="media-controls">
-            <button class="toggle-btn active" onclick="switchMedia('day1', 'https://lh3.googleusercontent.com/d/1h9LCkTPOC6-PWe7X63QViNsR9tln_RSj', this)">
-              <i class="ph ph-sparkle"></i> Official Concept
-            </button>
-            <button class="toggle-btn" onclick="switchMedia('day1', 'https://lh3.googleusercontent.com/d/18Dhf3VzOnkHEeiMllGjnqn-R_Cd3jWs9', this)">
-              <i class="ph ph-pencil-line"></i> Raw Draft Sketch
-            </button>
-          </div>
-        </div>
+        <p class="update-snippet">
+          Tired of planners that make you feel guilty for running behind schedule? Same. Traditional calendars are way too rigid—so let’s build a shame-free productivity tool together...
+        </p>
 
-        <!-- JOURNAL CONTENT -->
-        <div class="post-content">
-          <p>Tired of planners that make you feel guilty for running behind schedule? Same. Traditional calendars are way too rigid—so let’s build a shame-free productivity tool together. Good vibes only.</p>
-          <p>I sketched out the initial idea today, and honestly? It’s already coming together so well. But I felt like it was still missing that extra spark...</p>
-          <p><strong>WHAT IF 💡 we highlight the biggest win of the day?</strong> Aww yeah. Turning hours spent into collected wins.</p>
-          <p>Follow along on this journey and help me build Diem from scratch! 🫰</p>
-        </div>
-
-        <!-- RESOURCES SECTION -->
-        <div class="resources-box">
-          <h4><i class="ph ph-wrench"></i> Resources & Links</h4>
-          <ul>
-            <li><strong>Digital Sketches:</strong> Procreate & Figma</li>
-            <li><strong>VIP Community Waitlist:</strong> <a href="https://joindiem.kit.com/vip" target="_blank">joindiem.kit.com/vip</a></li>
-          </ul>
-        </div>
+        <a href="log-01.html" class="read-log-btn">
+          Read Full Log <i class="ph ph-arrow-right"></i>
+        </a>
       </article>
     </main>
 
@@ -326,15 +379,5 @@
     </footer>
   </div>
 
-  <script>
-    function switchMedia(postId, newSrc, btn) {
-      const imgTag = document.getElementById(postId + '-img');
-      imgTag.src = newSrc;
-      
-      const buttons = btn.parentElement.querySelectorAll('.toggle-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-  </script>
 </body>
 </html>
