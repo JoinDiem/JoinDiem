@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build Log #01 | Day 1 — Build Diem Together</title>
+  <title>Build Log #01 | Day 1 — One Day: Diem Started as a Thought</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -155,7 +155,7 @@
     .step-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 12px;
     }
 
@@ -169,16 +169,27 @@
       border: 1px solid rgba(79, 117, 255, 0.3);
     }
 
-    .step-title {
+    /* Smaller subtitle text representing what's written on the photo */
+    .photo-caption-text {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: #fff;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-style: italic;
     }
 
     .step-description {
       color: var(--text-silver);
       font-size: 1.05rem;
       line-height: 1.6;
+    }
+
+    .step-description a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    .step-description a:hover {
+      text-decoration: underline;
     }
 
     /* VIP CALLOUT AT BOTTOM OF LOG */
@@ -266,7 +277,7 @@
         <span class="log-tag">Build Log #01</span>
         <time class="log-date">OCTOBER 30, 2026</time>
       </div>
-      <h1 class="log-title">Day 1 > Build Diem Together</h1>
+      <h1 class="log-title">Day 1 > One Day: Diem Started as a Thought</h1>
     </div>
 
     <!-- JOURNEY STREAM (IMAGE + DESCRIPTION SCROLL) -->
@@ -280,7 +291,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">01</span>
-            <h2 class="step-title">Just Thought of a Business Idea</h2>
+            <h3 class="photo-caption-text">"Just thought of a business idea"</h3>
           </div>
           <p class="step-description">
             I often think of business ideas all the time. Here’s one of them.
@@ -291,15 +302,15 @@
       <!-- PHOTO 2 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo2.png" alt="Problem: Traditional Calendars" class="step-img" onerror="this.style.display='none'">
+          <img src="photo2.png" alt="Let's build it. day 1 > one day" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">02</span>
-            <h2 class="step-title">Problem: Traditional Calendars</h2>
+            <h3 class="photo-caption-text">"Let's build it. day 1 > one day"</h3>
           </div>
           <p class="step-description">
-            I used to be a perfectionist with my calendar. I planned every day, every hour, every 15 minute interval. If I’m being completely honest, every single minute of the day. I thought it was productivity maxing, but it actually was not sustainable. I was burning out and constantly feeling like I wasn’t good enough.
+            I have had previous business ideas. It's been a journey of learning myself. Though phases of analysis paralysis or executing then self doubting. I recently was inspired by a podcast to just do, fail, learn, do fail, learn, repeat.
           </p>
         </div>
       </article>
@@ -307,31 +318,31 @@
       <!-- PHOTO 3 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo3.png" alt="Solution: Calendar That Flows With You" class="step-img" onerror="this.style.display='none'">
+          <img src="photo3.png" alt="Problem: Traditional calendars make me feel guilty" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">03</span>
-            <h2 class="step-title">Solution: Calendar That Flows With You</h2>
+            <h3 class="photo-caption-text">"Problem: traditional calendars make me feel guilty for running behind schedule"</h3>
           </div>
           <p class="step-description">
-            Time and time again life happens. Snoozing in the morning, traffic, working longer than expected, exercising longer than expected, you name it. Life happens. Instead of feeling guilty for being "behind schedule" I wanted a way to just notate the natural flow of how the day actually goes.
+            I used to be a perfectionist with my calendar. I planned every day, every hour, every 15 minute interval. If I’m being completely honest, every single minute of the day. I thought it was productivity maxing, but it actually was not sustainable. I was burning out and constantly feeling like I wasn’t doing enough of my goals.
           </p>
         </div>
       </article>
 
-      <!-- PHOTO 4 (PLACEHOLDER FOR YOUR 9-PHOTO JOURNEY) -->
+      <!-- PHOTO 4 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo4.png" alt="Build Journey Step 4" class="step-img" onerror="this.style.display='none'">
+          <img src="photo4.png" alt="Solution: calendar that flows naturally with life" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">04</span>
-            <h2 class="step-title">Step 4 Header</h2>
+            <h3 class="photo-caption-text">"Solution: calendar that flows naturally with life. good vibes only."</h3>
           </div>
           <p class="step-description">
-            Add description for photo 4 here...
+            Why not create a calendar that flows naturally with you and doesn't shame you for the day.
           </p>
         </div>
       </article>
@@ -339,15 +350,15 @@
       <!-- PHOTO 5 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo5.png" alt="Build Journey Step 5" class="step-img" onerror="this.style.display='none'">
+          <img src="photo5.png" alt="Omg wait actually, this looks so good." class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">05</span>
-            <h2 class="step-title">Step 5 Header</h2>
+            <h3 class="photo-caption-text">"Omg wait actually, this looks so good."</h3>
           </div>
           <p class="step-description">
-            Add description for photo 5 here...
+            I used excalidraw in order to get my visual into something tangible. I was actually really surprised that it looks good and could work.
           </p>
         </div>
       </article>
@@ -355,15 +366,15 @@
       <!-- PHOTO 6 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo6.png" alt="Build Journey Step 6" class="step-img" onerror="this.style.display='none'">
+          <img src="photo6.png" alt="But it still needs something extra special" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">06</span>
-            <h2 class="step-title">Step 6 Header</h2>
+            <h3 class="photo-caption-text">"But it still needs something extra special 🤔"</h3>
           </div>
           <p class="step-description">
-            Add description for photo 6 here...
+            I needed it to be sticky though. What would make myself and other people ADDICTED to using it and feeling good while using it?
           </p>
         </div>
       </article>
@@ -371,15 +382,15 @@
       <!-- PHOTO 7 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo7.png" alt="Build Journey Step 7" class="step-img" onerror="this.style.display='none'">
+          <img src="photo7.png" alt="WHAT IF we highlight the biggest win of the day" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">07</span>
-            <h2 class="step-title">Step 7 Header</h2>
+            <h3 class="photo-caption-text">"WHAT IF 💡 we highlight the biggest win of the day"</h3>
           </div>
           <p class="step-description">
-            Add description for photo 7 here...
+            "Take care of first things, first" Sometimes we get so wrapped up in being productive, we forget to bask in the glory of growing in the journey. I was thinking for example, if my goal is to workout. I would love to see photos of myself in the gym. It acts as evidence that I am reaching my goals. Also not going to lie, gym pictures would be FIRE. This idea can apply to any goal though.
           </p>
         </div>
       </article>
@@ -387,15 +398,15 @@
       <!-- PHOTO 8 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo8.png" alt="Build Journey Step 8" class="step-img" onerror="this.style.display='none'">
+          <img src="photo8.png" alt="Awwwwww yeahhhh" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">08</span>
-            <h2 class="step-title">Step 8 Header</h2>
+            <h3 class="photo-caption-text">"Awwwwww yeahhhh"</h3>
           </div>
           <p class="step-description">
-            Add description for photo 8 here...
+            If the most important part of the day has a picture / video, that would be so motivating and inspirational. I'm so excited for this part.
           </p>
         </div>
       </article>
@@ -403,15 +414,15 @@
       <!-- PHOTO 9 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo9.png" alt="Build Journey Step 9" class="step-img" onerror="this.style.display='none'">
+          <img src="photo9.png" alt="Tired of planners that make you feel guilty?" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">09</span>
-            <h2 class="step-title">Step 9 Header</h2>
+            <h3 class="photo-caption-text">"Tired of planners that make you feel guilty? Let's fix that together. Join the VIP waitlist and help me build Diem from scratch 🫰 joindiem.kit.com/vip"</h3>
           </div>
           <p class="step-description">
-            Add description for photo 9 here...
+            Shameless self promo. It would be so cool if all of us can become a group of friends with similar interest and goals.
           </p>
         </div>
       </article>
