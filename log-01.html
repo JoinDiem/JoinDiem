@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Log #01 | Day 1 — Build Diem Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    :root {
+      --bg-main: #0B0C0E;
+      --bg-card: #13151B;
+      --bg-card-hover: #1A1D26;
+      --accent-blue: #4F75FF;
+      --accent-blue-hover: #3B5DDF;
+      --accent-green: #10B981;
+      --text-silver: #E2E8F0;
+      --text-muted: #94A3B8;
+      --border-color: rgba(226, 232, 240, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-silver);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      color: var(--accent-blue);
+    }
+
+    .back-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .back-nav:hover {
+      color: var(--accent-blue);
+    }
+
+    /* LOG INTRO */
+    .log-intro {
+      margin: 40px 0 50px;
+    }
+
+    .log-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .log-tag {
+      color: var(--accent-green);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .log-date {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .log-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    /* SCROLL JOURNEY CARDS */
+    .journey-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .journey-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .journey-step:hover {
+      border-color: rgba(79, 117, 255, 0.3);
+    }
+
+    .step-image-container {
+      width: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      min-height: 320px;
+    }
+
+    .step-img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .step-content {
+      padding: 30px;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .step-number {
+      background: rgba(79, 117, 255, 0.15);
+      color: var(--accent-blue);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(79, 117, 255, 0.3);
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .step-description {
+      color: var(--text-silver);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* VIP CALLOUT AT BOTTOM OF LOG */
+    .log-cta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .log-cta-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .log-cta-box p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-blue-hover);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <a href="index.html" class="brand-logo"><span>◆</span> Diem</a>
+      <a href="index.html" class="back-nav"><i class="ph ph-arrow-left"></i> Back to Homepage</a>
+    </header>
+
+    <!-- LOG INTRO -->
+    <div class="log-intro">
+      <div class="log-meta">
+        <span class="log-tag">Build Log #01</span>
+        <time class="log-date">OCTOBER 30, 2026</time>
+      </div>
+      <h1 class="log-title">Day 1 > Build Diem Together</h1>
+    </div>
+
+    <!-- JOURNEY STREAM (IMAGE + DESCRIPTION SCROLL) -->
+    <div class="journey-stream">
+
+      <!-- PHOTO 1 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo1.png" alt="Just thought of a business idea" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">01</span>
+            <h2 class="step-title">Just Thought of a Business Idea</h2>
+          </div>
+          <p class="step-description">
+            I often think of business ideas all the time. Here’s one of them.
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 2 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo2.png" alt="Problem: Traditional Calendars" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">02</span>
+            <h2 class="step-title">Problem: Traditional Calendars</h2>
+          </div>
+          <p class="step-description">
+            I used to be a perfectionist with my calendar. I planned every day, every hour, every 15 minute interval. If I’m being completely honest, every single minute of the day. I thought it was productivity maxing, but it actually was not sustainable. I was burning out and constantly feeling like I wasn’t good enough.
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 3 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo3.png" alt="Solution: Calendar That Flows With You" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">03</span>
+            <h2 class="step-title">Solution: Calendar That Flows With You</h2>
+          </div>
+          <p class="step-description">
+            Time and time again life happens. Snoozing in the morning, traffic, working longer than expected, exercising longer than expected, you name it. Life happens. Instead of feeling guilty for being "behind schedule" I wanted a way to just notate the natural flow of how the day actually goes.
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 4 (PLACEHOLDER FOR YOUR 9-PHOTO JOURNEY) -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo4.png" alt="Build Journey Step 4" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">04</span>
+            <h2 class="step-title">Step 4 Header</h2>
+          </div>
+          <p class="step-description">
+            Add description for photo 4 here...
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 5 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo5.png" alt="Build Journey Step 5" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">05</span>
+            <h2 class="step-title">Step 5 Header</h2>
+          </div>
+          <p class="step-description">
+            Add description for photo 5 here...
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 6 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo6.png" alt="Build Journey Step 6" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">06</span>
+            <h2 class="step-title">Step 6 Header</h2>
+          </div>
+          <p class="step-description">
+            Add description for photo 6 here...
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 7 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo7.png" alt="Build Journey Step 7" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">07</span>
+            <h2 class="step-title">Step 7 Header</h2>
+          </div>
+          <p class="step-description">
+            Add description for photo 7 here...
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 8 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo8.png" alt="Build Journey Step 8" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">08</span>
+            <h2 class="step-title">Step 8 Header</h2>
+          </div>
+          <p class="step-description">
+            Add description for photo 8 here...
+          </p>
+        </div>
+      </article>
+
+      <!-- PHOTO 9 -->
+      <article class="journey-step">
+        <div class="step-image-container">
+          <img src="photo9.png" alt="Build Journey Step 9" class="step-img" onerror="this.style.display='none'">
+        </div>
+        <div class="step-content">
+          <div class="step-header">
+            <span class="step-number">09</span>
+            <h2 class="step-title">Step 9 Header</h2>
+          </div>
+          <p class="step-description">
+            Add description for photo 9 here...
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BOTTOM VIP CONVERSION BOX -->
+    <div class="log-cta-box">
+      <h3>Want to build Diem with us?</h3>
+      <p>Join the VIP Beta list to follow the journey, test early builds, and earn community points.</p>
+      <form class="newsletter-form" action="https://joindiem.kit.com/vip" method="GET" target="_blank">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit" class="btn-primary">Join VIP Beta</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Diem. Built in public with zero guilt.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
