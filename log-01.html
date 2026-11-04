@@ -147,11 +147,12 @@
       border-bottom: 1px solid var(--border-color);
     }
 
+    /* Changed to 'contain' so the full photo ratio is preserved */
     .step-img {
       width: 100%;
       height: auto;
-      max-height: 550px;
-      object-fit: cover;
+      max-height: 750px;
+      object-fit: contain;
       display: block;
     }
 
