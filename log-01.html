@@ -145,13 +145,12 @@
       justify-content: center;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
-      min-height: 320px;
     }
 
     .step-img {
       width: 100%;
       height: auto;
-      max-height: 500px;
+      max-height: 550px;
       object-fit: cover;
       display: block;
     }
@@ -177,7 +176,6 @@
       border: 1px solid rgba(79, 117, 255, 0.3);
     }
 
-    /* Smaller, simpler source-style caption font */
     .photo-caption-text {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.88rem;
@@ -191,16 +189,58 @@
       line-height: 1.6;
     }
 
-    .step-description a {
-      color: var(--accent-blue);
-      text-decoration: none;
+    /* RAW PHOTO DUMP / SOURCE SECTION */
+    .photo-dump-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 60px;
     }
 
-    .step-description a:hover {
-      text-decoration: underline;
+    .dump-header {
+      margin-bottom: 20px;
     }
 
-    /* VIP CALLOUT AT BOTTOM OF LOG */
+    .dump-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .dump-header p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .dump-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .dump-item {
+      aspect-ratio: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #000;
+    }
+
+    .dump-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dump-item:hover .dump-img {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+
+    /* VIP CALLOUT */
     .log-cta-box {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -268,6 +308,13 @@
       padding: 40px 0;
       border-top: 1px solid var(--border-color);
     }
+
+    @media (max-width: 600px) {
+      .dump-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -289,13 +336,13 @@
       <h2 class="log-subtitle">Diem Started as a Thought</h2>
     </div>
 
-    <!-- JOURNEY STREAM (IMAGE + DESCRIPTION SCROLL) -->
+    <!-- JOURNEY STREAM (PNG EDITED MAIN SCROLL) -->
     <div class="journey-stream">
 
-      <!-- PHOTO 1 -->
+      <!-- STEP 1 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo1.png" alt="Just thought of a business idea" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 1 just thought of a business idea.png" alt="Just thought of a business idea" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -308,10 +355,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 2 -->
+      <!-- STEP 2 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo2.png" alt="Let's build it. day 1 > one day" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 2 lets build it day 1.png" alt="Let's build it" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -324,10 +371,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 3 -->
+      <!-- STEP 3 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo3.png" alt="Problem: Traditional calendars make me feel guilty" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 3 problem traditional calendars.png" alt="Problem: traditional calendars make me feel guilty" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -340,10 +387,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 4 -->
+      <!-- STEP 4 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo4.png" alt="Solution: calendar that flows naturally with life" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 4 solution calendar that flows.png" alt="Solution: calendar that flows naturally with life" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -356,10 +403,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 5 -->
+      <!-- STEP 5 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo5.png" alt="Omg wait actually, this looks so good." class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 5 omg wait.png" alt="Omg wait actually, this looks so good." class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -372,10 +419,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 6 -->
+      <!-- STEP 6 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo6.png" alt="But it still needs something extra special" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 6 but it still needs.png" alt="But it still needs something extra special" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -388,10 +435,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 7 -->
+      <!-- STEP 7 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo7.png" alt="WHAT IF we highlight the biggest win of the day" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 7 what if we highlight.png" alt="WHAT IF we highlight the biggest win of the day" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -404,10 +451,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 8 -->
+      <!-- STEP 8 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo8.png" alt="Awwwwww yeahhhh" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 8 awwwww yeahhhh.png" alt="Awwwwww yeahhhh" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -420,10 +467,10 @@
         </div>
       </article>
 
-      <!-- PHOTO 9 -->
+      <!-- STEP 9 -->
       <article class="journey-step">
         <div class="step-image-container">
-          <img src="photo9.png" alt="Tired of planners that make you feel guilty?" class="step-img" onerror="this.style.display='none'">
+          <img src="assets/images/2026.10.30 Photo 9 tired of planners.png" alt="Tired of planners that make you feel guilty?" class="step-img" onerror="this.style.display='none'">
         </div>
         <div class="step-content">
           <div class="step-header">
@@ -438,7 +485,26 @@
 
     </div>
 
-    <!-- BOTTOM VIP CONVERSION BOX -->
+    <!-- UNEDITED PHOTO DUMP / SOURCE SECTION (JPG GRID) -->
+    <section class="photo-dump-section">
+      <div class="dump-header">
+        <h3>Behind the Scenes — Unedited Source Dump</h3>
+        <p>Raw, unedited snapshots from Day 1 of building Diem.</p>
+      </div>
+      <div class="dump-grid">
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 1.jpg" alt="Unedited Photo 1" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 2.jpg" alt="Unedited Photo 2" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 3.jpg" alt="Unedited Photo 3" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 4.jpg" alt="Unedited Photo 4" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 5.jpg" alt="Unedited Photo 5" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 6.jpg" alt="Unedited Photo 6" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 7.jpg" alt="Unedited Photo 7" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 8.jpg" alt="Unedited Photo 8" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 9.jpg" alt="Unedited Photo 9" class="dump-img" onerror="this.style.display='none'"></div>
+      </div>
+    </section>
+
+    <!-- VIP CALLOUT -->
     <div class="log-cta-box">
       <h3>Want to build Diem with us?</h3>
       <p>Join the VIP Beta list to follow the journey, test early builds, and earn community points.</p>
