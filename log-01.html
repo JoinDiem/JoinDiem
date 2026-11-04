@@ -234,6 +234,7 @@
       overflow: hidden;
       border: 1px solid var(--border-color);
       background: #000;
+      cursor: pointer;
     }
 
     .dump-img {
@@ -247,6 +248,93 @@
     .dump-item:hover .dump-img {
       opacity: 1;
       transform: scale(1.1);
+    }
+
+    /* LIGHTBOX MODAL */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 12, 14, 0.95);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 900px;
+      max-height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--border-color);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lightbox-btn:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+    }
+
+    .lightbox-prev {
+      left: -60px;
+    }
+
+    .lightbox-next {
+      right: -60px;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-prev {
+        left: 10px;
+      }
+      .lightbox-next {
+        right: 10px;
+      }
     }
 
     /* VIP CALLOUT */
@@ -311,7 +399,6 @@
       background: var(--accent-blue-hover);
     }
 
-    /* Responsive stack for mobile forms */
     @media (max-width: 540px) {
       .newsletter-form {
         flex-direction: column;
@@ -504,18 +591,28 @@
         <h3>Behind the Scenes — Unedited Source Dump</h3>
       </div>
       <div class="dump-scroll-row">
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 1.jpg" alt="Source 1" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 2.jpg" alt="Source 2" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 3.jpg" alt="Source 3" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 4.jpg" alt="Source 4" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 5.jpg" alt="Source 5" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 6.jpg" alt="Source 6" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 7.jpg" alt="Source 7" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 8.jpg" alt="Source 8" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 9.jpg" alt="Source 9" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Tiktok Post Draft.jpg" alt="TikTok Post Draft" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(0)"><img src="assets/images/2026.10.30 Photo 1.jpg" alt="Source 1" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(1)"><img src="assets/images/2026.10.30 Photo 2.jpg" alt="Source 2" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(2)"><img src="assets/images/2026.10.30 Photo 3.jpg" alt="Source 3" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(3)"><img src="assets/images/2026.10.30 Photo 4.jpg" alt="Source 4" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(4)"><img src="assets/images/2026.10.30 Photo 5.jpg" alt="Source 5" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(5)"><img src="assets/images/2026.10.30 Photo 6.jpg" alt="Source 6" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(6)"><img src="assets/images/2026.10.30 Photo 7.jpg" alt="Source 7" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(7)"><img src="assets/images/2026.10.30 Photo 8.jpg" alt="Source 8" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(8)"><img src="assets/images/2026.10.30 Photo 9.jpg" alt="Source 9" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item" onclick="openLightbox(9)"><img src="assets/images/2026.10.30 Tiktok Post Draft.jpg" alt="TikTok Post Draft" class="dump-img" onerror="this.style.display='none'"></div>
       </div>
     </section>
+
+    <!-- LIGHTBOX MODAL OVERLAY -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <button class="lightbox-close" onclick="closeLightboxDirect()">&times;</button>
+        <button class="lightbox-btn lightbox-prev" onclick="changeSlide(-1)"><i class="ph ph-caret-left"></i></button>
+        <img id="lightbox-img" src="" alt="Zoomed Source" class="lightbox-img">
+        <button class="lightbox-btn lightbox-next" onclick="changeSlide(1)"><i class="ph ph-caret-right"></i></button>
+      </div>
+    </div>
 
     <!-- VIP CALLOUT -->
     <div class="log-cta-box">
@@ -532,6 +629,61 @@
       <p>© 2026 Diem. Built in public with zero guilt.</p>
     </footer>
   </div>
+
+  <script>
+    const images = [
+      "assets/images/2026.10.30 Photo 1.jpg",
+      "assets/images/2026.10.30 Photo 2.jpg",
+      "assets/images/2026.10.30 Photo 3.jpg",
+      "assets/images/2026.10.30 Photo 4.jpg",
+      "assets/images/2026.10.30 Photo 5.jpg",
+      "assets/images/2026.10.30 Photo 6.jpg",
+      "assets/images/2026.10.30 Photo 7.jpg",
+      "assets/images/2026.10.30 Photo 8.jpg",
+      "assets/images/2026.10.30 Photo 9.jpg",
+      "assets/images/2026.10.30 Tiktok Post Draft.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox(event) {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    function closeLightboxDirect() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    function changeSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      } else if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+      document.getElementById('lightbox-img').src = images[currentIndex];
+    }
+
+    // Keyboard support for left/right arrows and escape key
+    document.addEventListener('keydown', function(e) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeSlide(1);
+      } else if (e.key === 'Escape') {
+        closeLightboxDirect();
+      }
+    });
+  </script>
 
 </body>
 </html>
