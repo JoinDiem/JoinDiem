@@ -123,7 +123,7 @@
       display: flex;
       flex-direction: column;
       gap: 60px;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .journey-step {
@@ -147,7 +147,6 @@
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* Changed to 'contain' so the full photo ratio is preserved */
     .step-img {
       width: 100%;
       height: auto;
@@ -190,39 +189,57 @@
       line-height: 1.6;
     }
 
-    /* RAW PHOTO DUMP / SOURCE SECTION */
+    /* EASTER EGG SOURCE STRIP (TINY ICON ROW) */
     .photo-dump-section {
-      background: var(--bg-card);
+      background: rgba(19, 21, 27, 0.5);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 60px;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 50px;
     }
 
     .dump-header {
-      margin-bottom: 20px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 
     .dump-header h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
     }
 
     .dump-header p {
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+      opacity: 0.7;
     }
 
-    .dump-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+    .dump-scroll-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-color) transparent;
+    }
+
+    .dump-scroll-row::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .dump-scroll-row::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
     }
 
     .dump-item {
-      aspect-ratio: 1;
-      border-radius: 10px;
+      flex: 0 0 54px; /* Roughly 1 inch tall/wide icon size */
+      height: 54px;
+      border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--border-color);
       background: #000;
@@ -232,13 +249,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.85;
+      opacity: 0.7;
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .dump-item:hover .dump-img {
       opacity: 1;
-      transform: scale(1.03);
+      transform: scale(1.1);
     }
 
     /* VIP CALLOUT */
@@ -308,13 +325,6 @@
       font-size: 0.85rem;
       padding: 40px 0;
       border-top: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 600px) {
-      .dump-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-      }
     }
   </style>
 </head>
@@ -486,22 +496,22 @@
 
     </div>
 
-    <!-- UNEDITED PHOTO DUMP / SOURCE SECTION (JPG GRID) -->
+    <!-- EASTER EGG SOURCE STRIP (TINY ICON ROW) -->
     <section class="photo-dump-section">
       <div class="dump-header">
-        <h3>Behind the Scenes — Unedited Source Dump</h3>
-        <p>Raw, unedited snapshots from Day 1 of building Diem.</p>
+        <h3>Raw Source Easter Eggs</h3>
+        <p>Unedited capture archive</p>
       </div>
-      <div class="dump-grid">
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 1.jpg" alt="Unedited Photo 1" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 2.jpg" alt="Unedited Photo 2" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 3.jpg" alt="Unedited Photo 3" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 4.jpg" alt="Unedited Photo 4" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 5.jpg" alt="Unedited Photo 5" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 6.jpg" alt="Unedited Photo 6" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 7.jpg" alt="Unedited Photo 7" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 8.jpg" alt="Unedited Photo 8" class="dump-img" onerror="this.style.display='none'"></div>
-        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 9.jpg" alt="Unedited Photo 9" class="dump-img" onerror="this.style.display='none'"></div>
+      <div class="dump-scroll-row">
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 1.jpg" alt="Source 1" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 2.jpg" alt="Source 2" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 3.jpg" alt="Source 3" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 4.jpg" alt="Source 4" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 5.jpg" alt="Source 5" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 6.jpg" alt="Source 6" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 7.jpg" alt="Source 7" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 8.jpg" alt="Source 8" class="dump-img" onerror="this.style.display='none'"></div>
+        <div class="dump-item"><img src="assets/images/2026.10.30 Photo 9.jpg" alt="Source 9" class="dump-img" onerror="this.style.display='none'"></div>
       </div>
     </section>
 
