@@ -224,7 +224,7 @@
       line-height: 1.5;
     }
 
-    /* LATEST UPDATE SECTION */
+    /* BUILD LOGS SECTION */
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -243,7 +243,13 @@
       border: 1px solid var(--border-color);
       border-radius: 16px;
       padding: 30px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .update-card:hover {
+      border-color: rgba(79, 117, 255, 0.4);
+      transform: translateY(-2px);
     }
 
     .update-header {
@@ -326,7 +332,7 @@
           <input type="email" placeholder="Your email address" required>
           <button type="submit" class="btn-primary">Join VIP</button>
         </form>
-        <a href="#latest-update" class="btn-secondary">Read Build Logs <i class="ph ph-arrow-down"></i></a>
+        <a href="#latest-updates" class="btn-secondary">Read Build Logs <i class="ph ph-arrow-down"></i></a>
       </div>
     </section>
 
@@ -349,12 +355,31 @@
       </div>
     </section>
 
-    <!-- LATEST UPDATE SECTION -->
-    <main id="latest-update">
+    <!-- BUILD LOGS ARCHIVE SECTION -->
+    <main id="latest-updates">
       <div class="section-header">
-        <h2 class="section-title">Latest Build Update</h2>
+        <h2 class="section-title">Build Logs Archive</h2>
       </div>
 
+      <!-- BUILD LOG #02 -->
+      <article class="update-card">
+        <div class="update-header">
+          <span class="update-tag">Build Log #02</span>
+          <time class="update-date">NOVEMBER 10, 2026</time>
+        </div>
+
+        <h3 class="update-title">Day 2: First Visual Mockup — Designing an Anti-Burnout App</h3>
+
+        <p class="update-snippet">
+          Moving from rough ideas to UI prototypes. Designing a flexible calendar framework, wireframing intent vs. reality, and introducing the core "Star Moment" daily win anchor.
+        </p>
+
+        <a href="log-02.html" class="read-log-btn">
+          Read Build Log #02 <i class="ph ph-arrow-right"></i>
+        </a>
+      </article>
+
+      <!-- BUILD LOG #01 -->
       <article class="update-card">
         <div class="update-header">
           <span class="update-tag">Build Log #01</span>
@@ -368,7 +393,7 @@
         </p>
 
         <a href="log-01.html" class="read-log-btn">
-          Read Full Log <i class="ph ph-arrow-right"></i>
+          Read Build Log #01 <i class="ph ph-arrow-right"></i>
         </a>
       </article>
     </main>
