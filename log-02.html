@@ -447,7 +447,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">01</span>
-            <span class="photo-caption-text">Come along with me to work on this shame free productivity tool!</span>
+            <span class="photo-caption-text">"Day 2 of building an anti burnout app because traditional planners make me feel like a failure"</span>
           </div>
           <p class="step-description">
             Come along with me to work on this shame free productivity tool!
@@ -463,7 +463,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">02</span>
-            <span class="photo-caption-text">I used to pack my day full of tasks and feel guilty for running behind schedule. I questioned if it was healthy to plan every 15 minutes of my day to maximize productivity.</span>
+            <span class="photo-caption-text">"Problem: traditional planners are rigid boxes that punish you for being human"</span>
           </div>
           <p class="step-description">
             I used to pack my day full of tasks and feel guilty for running behind schedule. I questioned if it was healthy to plan every 15 minutes of my day to maximize productivity.
@@ -479,7 +479,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">03</span>
-            <span class="photo-caption-text">Calendars should be: Less about packing a day of max productivity. More about going with life's natural flow. Less about feeling guilty for falling behind. More about giving yourself grace and observing. Less about thinking what didn't get done. More about celebrating the biggest wins.</span>
+            <span class="photo-caption-text">"Solution: a calendar that goes with your natural life. Zero guilt. Just grace."</span>
           </div>
           <p class="step-description">
             Calendars should be:<br>
@@ -501,7 +501,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">04</span>
-            <span class="photo-caption-text">This layout includes reality and notes which will allow room for grace and self reflection.</span>
+            <span class="photo-caption-text">"I sketched the core layout to track intent vs reality"</span>
           </div>
           <p class="step-description">
             This layout includes reality and notes which will allow room for grace and self reflection.
@@ -517,7 +517,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">05</span>
-            <span class="photo-caption-text">I used Gemini to work through a few color palettes until I came to a set of colors I connected to and thought would represent the app's purpose well. I also added notes on how I wanted the user interface to look like into ChatGPT.</span>
+            <span class="photo-caption-text">"I fed my vision and color psychology into ChatGPT to bring it to life"</span>
           </div>
           <p class="step-description">
             I used Gemini to work through a few color palettes until I came to a set of colors I connected to and thought would represent the app's purpose well. I also added notes on how I wanted the user interface to look like into ChatGPT.
@@ -533,7 +533,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">06</span>
-            <span class="photo-caption-text">This is the first image ChatGPT came up with. I was super impressed. It looked super good, but it was misplacing the most important star moment of the day.</span>
+            <span class="photo-caption-text">"First draft: clean, but missing a central emotional anchor"</span>
           </div>
           <p class="step-description">
             This is the first image ChatGPT came up with. I was super impressed. It looked super good, but it was misplacing the most important star moment of the day.
@@ -549,7 +549,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">07</span>
-            <span class="photo-caption-text">I prompted ChatGPT to make sure the star moment was obvious. This is going to be one of the most important features of the app.</span>
+            <span class="photo-caption-text">"feedback: needed to emphasize the STAR MOMENT (single biggest win of the day)"</span>
           </div>
           <p class="step-description">
             I prompted ChatGPT to make sure the star moment was obvious. This is going to be one of the most important features of the app.
@@ -565,7 +565,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">08</span>
-            <span class="photo-caption-text">After several hours of going back and forth with ChatGPT to make revisions, I settled on this as a good mockup image. Pretty nice, if I do say so myself.</span>
+            <span class="photo-caption-text">"that's more like it 😎"</span>
           </div>
           <p class="step-description">
             After several hours of going back and forth with ChatGPT to make revisions, I settled on this as a good mockup image. Pretty nice, if I do say so myself.
@@ -581,7 +581,7 @@
         <div class="step-content">
           <div class="step-header">
             <span class="step-number">09</span>
-            <span class="photo-caption-text">I know I can't be the only one with this struggle. Be part of beta testing, shaping the app, and building a community. Join the waitlist to be part of building Diem with me!</span>
+            <span class="photo-caption-text">"I'm building Diem right now. Want in? Join here: joindiem.kit.com/vip"</span>
           </div>
           <p class="step-description">
             I know I can't be the only one with this struggle. Be part of beta testing, shaping the app, and building a community. Join the waitlist to be part of building Diem with me!
@@ -614,4 +614,22 @@
     <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
       <div class="lightbox-content" onclick="event.stopPropagation()">
         <button class="lightbox-close" onclick="closeLightboxDirect()">&times;</button>
-        <button class="lightbox-btn lightbox-pre
+        <button class="lightbox-btn lightbox-prev" onclick="changeSlide(-1)"><i class="ph ph-caret-left"></i></button>
+        <img id="lightbox-img" src="" alt="Zoomed Source" class="lightbox-img">
+        <button class="lightbox-btn lightbox-next" onclick="changeSlide(1)"><i class="ph ph-caret-right"></i></button>
+      </div>
+    </div>
+
+    <!-- VIP CALLOUT -->
+    <div class="log-cta-box">
+      <h3>Want to build Diem with us?</h3>
+      <p>Join the VIP Beta list to follow the journey, test early builds, and earn community points.</p>
+      <form class="newsletter-form" action="https://joindiem.kit.com/vip" method="GET" target="_blank">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit" class="btn-primary">Join VIP Beta</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Diem. Built in 
