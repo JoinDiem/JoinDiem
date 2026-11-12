@@ -126,37 +126,18 @@
       flex-wrap: wrap;
     }
 
-    .newsletter-form {
-      display: flex;
-      gap: 10px;
-      width: 100%;
-      max-width: 420px;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      padding: 14px 18px;
-      border-radius: 10px;
-      border: 1px solid var(--border-color);
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font-size: 0.95rem;
-      outline: none;
-    }
-
-    .newsletter-form input:focus {
-      border-color: var(--accent-blue);
-    }
-
     .btn-primary {
       background: var(--accent-blue);
       color: #fff;
       border: none;
-      padding: 14px 22px;
+      padding: 14px 24px;
       border-radius: 10px;
       font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
       transition: background 0.2s;
     }
 
@@ -328,10 +309,9 @@
       <p>Turning time-blindness into a gamified scrapbook of ✨ wins ✨, without the guilt. Seize your hours and join the VIP app beta test waitlist.</p>
       
       <div class="hero-cta">
-        <form class="newsletter-form" action="https://joindiem.kit.com/vip" method="GET" target="_blank">
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit" class="btn-primary">Join VIP</button>
-        </form>
+        <a href="https://joindiem.kit.com/vip" class="btn-primary" target="_blank">
+          <i class="ph ph-rocket-launch"></i> Join VIP Waitlist
+        </a>
         <a href="#latest-updates" class="btn-secondary">Read Chapters <i class="ph ph-arrow-down"></i></a>
       </div>
     </section>
