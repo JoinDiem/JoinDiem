@@ -123,46 +123,25 @@
       justify-content: center;
       align-items: center;
       gap: 12px;
-      flex-wrap: wrap;
     }
 
     .btn-primary {
       background: var(--accent-blue);
       color: #fff;
       border: none;
-      padding: 14px 24px;
+      padding: 14px 28px;
       border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       transition: background 0.2s;
     }
 
     .btn-primary:hover {
       background: var(--accent-blue-hover);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-silver);
-      border: 1px solid var(--border-color);
-      padding: 13px 20px;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--text-silver);
-      background: rgba(255, 255, 255, 0.03);
     }
 
     /* FEATURE CARDS GRID */
@@ -205,81 +184,130 @@
       line-height: 1.5;
     }
 
-    /* CHAPTERS SECTION */
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: #fff;
-    }
-
-    .update-card {
+    /* MANGA MANHWA SERIES HUB STYLING */
+    .manga-hub {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 20px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
     }
 
-    .update-card:hover {
-      border-color: rgba(79, 117, 255, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .update-header {
+    .manga-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
     }
 
-    .update-tag {
+    .manga-badge {
       color: var(--accent-green);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
-    .update-date {
+    .manga-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .manga-description {
+      color: var(--text-silver);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .chapters-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .chapter-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.2s ease;
+    }
+
+    .chapter-item:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(79, 117, 255, 0.4);
+      transform: translateX(4px);
+    }
+
+    .chapter-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .chapter-number {
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .chapter-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .chapter-date {
       color: var(--text-muted);
       font-size: 0.85rem;
     }
 
-    .update-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: #fff;
+    /* HIDDEN CHAPTERS FOR TOGGLE */
+    .hidden-chapters {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
       margin-bottom: 12px;
     }
 
-    .update-snippet {
+    .hidden-chapters.visible {
+      display: flex;
+    }
+
+    .expand-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
       color: var(--text-silver);
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .read-log-btn {
-      color: var(--accent-blue);
-      text-decoration: none;
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
       font-weight: 600;
-      display: inline-flex;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-size: 0.95rem;
-      transition: gap 0.2s ease;
+      transition: all 0.2s ease;
+      margin-top: 10px;
     }
 
-    .read-log-btn:hover {
-      gap: 10px;
-      text-decoration: underline;
+    .expand-btn:hover {
+      background: rgba(79, 117, 255, 0.1);
+      border-color: var(--accent-blue);
+      color: #fff;
     }
 
     footer {
@@ -312,7 +340,6 @@
         <a href="https://joindiem.kit.com/vip" class="btn-primary" target="_blank">
           <i class="ph ph-rocket-launch"></i> Join VIP Waitlist
         </a>
-        <a href="#latest-updates" class="btn-secondary">Read Chapters <i class="ph ph-arrow-down"></i></a>
       </div>
     </section>
 
@@ -335,47 +362,52 @@
       </div>
     </section>
 
-    <!-- CHAPTERS ARCHIVE SECTION -->
-    <main id="latest-updates">
-      <div class="section-header">
-        <h2 class="section-title">Read Chapters</h2>
+    <!-- MANGA SERIES HUB SECTION -->
+    <main class="manga-hub">
+      <div class="manga-header">
+        <span class="manga-badge">Serialized Build Log</span>
+        <h2 class="manga-title">Diem: The Startup Webtoon</h2>
       </div>
 
-      <!-- CHAPTER 2 -->
-      <article class="update-card">
-        <div class="update-header">
-          <span class="update-tag">Chapter 2</span>
-          <time class="update-date">NOVEMBER 10, 2026</time>
-        </div>
+      <p class="manga-description">
+        Follow along with me on my journey to building a shame free productivity tool. You will get to read all the steps, inner thoughts, insider tips, and for those who want to be super fans... have input on how the next chapter turns out. Let's build this tool together. Whether you want to be just a reader or an active contributor, this is the place to do it.
+      </p>
 
-        <h3 class="update-title">Day 2: Visual Mockup — Designing an app that flows with life</h3>
-
-        <p class="update-snippet">
-          Moving from rough ideas to UI prototypes. Designing a flexible calendar framework, wireframing intent vs. reality, and introducing the core "Star Moment" daily win anchor.
-        </p>
-
-        <a href="log-02.html" class="read-log-btn">
-          Read Chapter 2 <i class="ph ph-arrow-right"></i>
+      <div class="chapters-list-container">
+        <!-- CHAPTER 2 -->
+        <a href="log-02.html" class="chapter-item">
+          <div class="chapter-info">
+            <span class="chapter-number">Chapter 2</span>
+            <span class="chapter-name">Visual Mockup — Designing an app that flows with life</span>
+          </div>
+          <span class="chapter-date">Nov 10, 2026</span>
         </a>
-      </article>
 
-      <!-- CHAPTER 1 -->
-      <article class="update-card">
-        <div class="update-header">
-          <span class="update-tag">Chapter 1</span>
-          <time class="update-date">OCTOBER 30, 2026</time>
-        </div>
-
-        <h3 class="update-title">Day 1 > Build Diem Together</h3>
-
-        <p class="update-snippet">
-          Tired of planners that make you feel guilty for running behind schedule? Same. Traditional calendars are way too rigid—so let’s build a shame-free productivity tool together...
-        </p>
-
-        <a href="log-01.html" class="read-log-btn">
-          Read Chapter 1 <i class="ph ph-arrow-right"></i>
+        <!-- CHAPTER 1 -->
+        <a href="log-01.html" class="chapter-item">
+          <div class="chapter-info">
+            <span class="chapter-number">Chapter 1</span>
+            <span class="chapter-name">Day 1 > One Day: Diem Started as a Thought</span>
+          </div>
+          <span class="chapter-date">Oct 30, 2026</span>
         </a>
-      </article>
+
+        <!-- EXPANDABLE OLDER CHAPTERS PLACEHOLDER (Ready for Chapters 3+) -->
+        <div id="hidden-chapters" class="hidden-chapters">
+          <!-- When you add Chapter 3, 4, etc. later, paste them in here! -->
+          <a href="#" class="chapter-item" style="opacity: 0.6; pointer-events: none;">
+            <div class="chapter-info">
+              <span class="chapter-number">Chapter 3</span>
+              <span class="chapter-name">Coming Soon...</span>
+            </div>
+            <span class="chapter-date">TBD</span>
+          </a>
+        </div>
+      </div>
+
+      <button id="toggle-chapters-btn" class="expand-btn" onclick="toggleChapters()">
+        <span>Show All Chapters</span> <i class="ph ph-caret-down" id="toggle-icon"></i>
+      </button>
     </main>
 
     <!-- FOOTER -->
@@ -383,6 +415,22 @@
       <p>© 2026 Diem. Built in public with zero guilt.</p>
     </footer>
   </div>
+
+  <script>
+    function toggleChapters() {
+      const hiddenDiv = document.getElementById('hidden-chapters');
+      const btn = document.getElementById('toggle-chapters-btn');
+      const icon = document.getElementById('toggle-icon');
+
+      hiddenDiv.classList.toggle('visible');
+
+      if (hiddenDiv.classList.contains('visible')) {
+        btn.innerHTML = '<span>Show Less</span> <i class="ph ph-caret-up" id="toggle-icon"></i>';
+      } else {
+        btn.innerHTML = '<span>Show All Chapters</span> <i class="ph ph-caret-down" id="toggle-icon"></i>';
+      }
+    }
+  </script>
 
 </body>
 </html>
